@@ -6,7 +6,6 @@ import './App.css';
 
 function App() {
   const name = 'James';
-  const foods = ['피자','삼겹살','불고기'];
   return (
     <div>     {/* 하나의 태그로 감싸주어야 함*/}
       <h1 style={{backgroundColor:"beige"}}>name: {name}</h1>

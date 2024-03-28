@@ -1,17 +1,19 @@
+import { useState } from 'react';
 import './App.css';
-import Card from '../components/Card';
+import User from '../components/User';
+import User2 from '../components/User2';
+
 
 //  1. tag 이름 - 대문자로 시작
 //  2. JS - {}     {name}
 //  3. 하나의 태그
 
 function App() {
+  
   return (
-    <div>
-      <Card />    
-      <br />
-      <Card />
-    </div>
+   <div>
+    <User2 />
+  </div>
   );
 }
 export default App;
