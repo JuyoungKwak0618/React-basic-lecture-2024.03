@@ -1,0 +1,10 @@
+.photo {
+  width: 200px; height: 200px; border-radius: 100%;
+}
+
+.card {
+  width: 300px; text-align: center; padding: 10px;
+  background-color: #c0dce0; border-radius: 20px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.4);
+  margin-top: 20px;
+}
