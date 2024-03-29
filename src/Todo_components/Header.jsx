@@ -1,9 +1,22 @@
-import '../apps/App.css';
+import React from 'react';
+import { Button, ButtonGroup } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-export default function Header() {
+export default function Header({ filters, filter, onFilterChange }) {
   return (
-    <div>
-    </div>
+    <header>
+      <ButtonGroup>
+        {filters.map((value, index) => (
+          <Button
+            key={index}
+            variant={filter === value ? 'primary' : 'secondary'}
+            onClick={() => onFilterChange(value)}
+          >
+            {value}
+          </Button>
+        ))}
+      </ButtonGroup>
+      <hr />
+    </header>
   );
 }
-

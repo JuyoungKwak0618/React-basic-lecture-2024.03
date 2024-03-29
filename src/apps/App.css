@@ -2,9 +2,9 @@
   width: 200px; height: 200px; border-radius: 100%;
 }
 
-.card {
+.cards {
   width: 300px; text-align: center; padding: 10px;
-  background-color: #c0dce0; border-radius: 20px;
+ border-radius: 20px;
   box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.4);
   margin-top: 20px;
 }
@@ -13,4 +13,25 @@ input, button {
   padding: 5px; margin: 5px;
 }
 
-td { padding: 5px; }
+td {
+  background-color: #ccd8ff;
+}
+.card-body {
+  background-color: #f8f9fa;
+  border-radius: 0.25rem;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-body.all {
+  background-color: #eec1b1;
+}
+
+.card-body.active {
+  background-color: #d4edda;
+}
+
+.card-body.completed {
+  background-color: #cce5ff;
+}
+

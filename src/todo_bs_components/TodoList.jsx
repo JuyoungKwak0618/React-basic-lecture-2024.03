@@ -1,42 +1,37 @@
 import { useEffect, useState } from 'react';
-import '../apps/App.css';
 import AddTodo from './AddTodo';
 import Todo from './Todo';
+import { Table } from 'react-bootstrap';
 
 export default function TodoList({filter}) {
-  const initData = readFromLocalStorage();
+  const initData = readFromLocalStorage()
   const [todos, setTodos] = useState(initData);
-  const handleUpdate = updated =>
-   setTodos(todos.map(todo => (todo.id === updated.id) ? updated : todo));
-
-  const handleDelete = deleted => 
-    setTodos(todos.filter(todo => todo.id != deleted.id));
-  
+  const handleUpdate = updated => 
+    setTodos(todos.map(todo => (todo.id === updated.id) ? updated : todo));
+  const handleDelete = deleted =>
+    setTodos(todos.filter(todo => todo.id !== deleted.id));
   const handleAdd = todo => setTodos([...todos, todo]);
 
   useEffect(() => {
     localStorage.setItem('todos', JSON.stringify(todos));
-  },[todos]);
+  }, [todos]);
 
   const filteredTodos = getFilteredTodos(todos, filter);
-
   return (
-    <div className={`cards ${filter}`}>
-      <ul>
-        {filter === 'all' && 'All'}
+    <>
+      <Table borderless size='sm'>
+      {filter === 'all' && 'All'}
       {filter === 'active' && 'Active'}
       {filter === 'completed' && 'Completed'}
-        {
+        {  
           filteredTodos.map(todo => (
             <Todo todo={todo} onUpdate={handleUpdate} onDelete={handleDelete} />
           ))
         }
-      </ul>
+      </Table>
       <AddTodo onAdd={handleAdd} />
-    </div>
+    </>
   );
-
-  
 }
 
 function readFromLocalStorage() {

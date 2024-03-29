@@ -7,6 +7,7 @@ import AddTodo from './AddTodo';
 
 export default function Todo({todo, onUpdate, onDelete}) {
   const {id, work, status} = todo;
+  
   const handleChange = e => {
     const status = e.target.checked ? 'completed' : 'active';
     onUpdate({...todo, status});
