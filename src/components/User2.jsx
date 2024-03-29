@@ -15,15 +15,16 @@ export default function User() {
   const [form, setForm] = useState({id: '' , name: '', email: ''});
   const handleSubmit = (event) => {
     event.preventDefault();     // submit button을 누르면 페이지가 자동적으로 바뀌는 것을 방지
-    const existUser = users.find(user => user.id == form.id);
+    const existUser = users.find(user => user.id === form.id);   // 기존 사용자 검색
     const newUsers = [];
     if (existUser) {
-      for(let user of users) 
-        if (user.id == form.id) 
-          newUsers.push(form);
-         else 
-          newUsers.push(user);
-          setUsers(newUsers);
+      setUsers(users.map(user => (user.id === form.id) ? form : user))   // 기존 사용자가 존재할 경우 정보 업데이트
+      // for(let user of users) 
+      //   if (user.id === form.id) 
+      //     newUsers.push(form);
+      //    else 
+      //     newUsers.push(user);
+      //     setUsers(newUsers);
     } else {
       setUsers([...users, form]);
     }
