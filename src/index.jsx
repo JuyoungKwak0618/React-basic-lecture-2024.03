@@ -1,13 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './apps/App21_router';
 import reportWebVitals from './reportWebVitals';
+import BasicGrid from './mui/BasicGrid';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <div style={{marginTop:'40px', marginLeft:'20px', marginRight:'20px',}}>
+    <BasicGrid />
+    {/* <App /> */}
+    </div>
   </React.StrictMode>
 );
 
